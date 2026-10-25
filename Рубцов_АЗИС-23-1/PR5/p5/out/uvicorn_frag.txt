@@ -1,0 +1,17 @@
+INFO:     Will watch for changes in these directories: ['/home/claude/work/p5']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [4916] using WatchFiles
+INFO:     Started server process [4919]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+...
+INFO:     127.0.0.1:48670 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48670 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42706 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42706 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42712 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42712 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42720 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42720 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42724 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42724 - "GET /items/ HTTP/1.1" 200 OK

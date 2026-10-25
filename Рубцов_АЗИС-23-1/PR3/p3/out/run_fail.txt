@@ -1,0 +1,39 @@
+[1m============================================ test session starts =============================================[0m
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/work/p3
+configfile: pytest.ini
+plugins: anyio-4.13.0
+[1mcollecting ... [0mcollected 21 items
+
+test_auth_manager.py::test_register_and_get_user_by_id [32mPASSED[0m[32m                                          [  4%][0m
+test_auth_manager.py::test_authenticate_user_success_and_wrong_password [32mPASSED[0m[32m                         [  9%][0m
+test_auth_manager.py::test_delete_user [32mPASSED[0m[32m                                                          [ 14%][0m
+test_auth_manager.py::test_count_users_by_country[CountryA-2] [32mPASSED[0m[32m                                   [ 19%][0m
+test_auth_manager.py::test_count_users_by_country[CountryB-1] [32mPASSED[0m[32m                                   [ 23%][0m
+test_auth_manager.py::test_count_users_by_country[CountryC-0] [32mPASSED[0m[32m                                   [ 28%][0m
+test_auth_manager.py::test_authenticate_user_parametrized[dave-pass-True] [32mPASSED[0m[32m                       [ 33%][0m
+test_auth_manager.py::test_authenticate_user_parametrized[dave-wrong-False] [32mPASSED[0m[32m                     [ 38%][0m
+test_auth_manager.py::test_authenticate_user_parametrized[nobody-pass-False] [32mPASSED[0m[32m                    [ 42%][0m
+test_auth_manager.py::test_authenticate_user_parametrized[DAVE-pass-False] [32mPASSED[0m[32m                      [ 47%][0m
+test_auth_manager.py::test_transfer_balance_parametrized[200-800-700] [32mPASSED[0m[32m                           [ 52%][0m
+test_auth_manager.py::test_transfer_balance_parametrized[0-1000-500] [32mPASSED[0m[32m                            [ 57%][0m
+test_auth_manager.py::test_transfer_balance_parametrized[1000-0-1500] [32mPASSED[0m[32m                           [ 61%][0m
+test_auth_manager.py::test_transfer_balance_parametrized[0.5-999.5-500.5] [32mPASSED[0m[32m                       [ 66%][0m
+test_auth_manager.py::test_transfer_balance_insufficient_funds [32mPASSED[0m[32m                                  [ 71%][0m
+test_auth_manager.py::test_register_duplicate_username [32mPASSED[0m[32m                                          [ 76%][0m
+test_auth_manager.py::test_sql_injection_authenticate_user [32mPASSED[0m[32m                                      [ 80%][0m
+test_auth_manager.py::test_sql_injection_register_user_drop_table [32mPASSED[0m[32m                               [ 85%][0m
+test_auth_manager.py::test_register_many_users [33mSKIPPED[0m (Медленный тест: массовая регистрация, не з...)[32m [ 90%][0m
+test_auth_manager.py::test_user_row_to_dict [32mPASSED[0m[32m                                                     [ 95%][0m
+test_auth_manager_failing.py::test_transfer_balance_wrong_expectation [31mFAILED[0m[31m                           [100%][0m
+
+================================================== FAILURES ==================================================
+[31m[1m__________________________________ test_transfer_balance_wrong_expectation ___________________________________[0m
+[1m[31mtest_auth_manager_failing.py[0m:39: in test_transfer_balance_wrong_expectation
+    [0m[94massert[39;49;00m balance1 == [94m900[39;49;00m  [90m# намеренная ошибка: реальный баланс 800[39;49;00m[90m[39;49;00m
+    ^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31mE   assert 800.0 == 900[0m
+[36m[1m========================================== short test summary info ===========================================[0m
+[31mFAILED[0m test_auth_manager_failing.py::[1mtest_transfer_balance_wrong_expectation[0m - assert 800.0 == 900
+[31m================================== [31m[1m1 failed[0m, [32m19 passed[0m, [33m1 skipped[0m[31m in 0.08s[0m[31m ===================================[0m

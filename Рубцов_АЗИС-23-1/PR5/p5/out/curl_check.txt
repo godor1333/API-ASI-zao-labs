@@ -1,0 +1,35 @@
+$ curl -s -X POST http://127.0.0.1:8000/items/ -H "Content-Type: application/json" -d '{"name": "Item 1", "description": "A description of Item 1", "price": 100.0}'
+HTTP/1.1 200 OK
+date: Sat, 12 Sep 2026 09:57:41 GMT
+server: uvicorn
+content-length: 71
+content-type: application/json
+
+{"name":"Item 1","description":"A description of Item 1","price":100.0}
+
+$ curl -s http://127.0.0.1:8000/items/
+HTTP/1.1 200 OK
+date: Sat, 12 Sep 2026 09:57:41 GMT
+server: uvicorn
+content-length: 73
+content-type: application/json
+
+[{"name":"Item 1","description":"A description of Item 1","price":100.0}]
+
+$ curl -s http://127.0.0.1:8000/items/1
+HTTP/1.1 200 OK
+date: Sat, 12 Sep 2026 09:57:41 GMT
+server: uvicorn
+content-length: 71
+content-type: application/json
+
+{"name":"Item 1","description":"A description of Item 1","price":100.0}
+
+$ curl -s http://127.0.0.1:8000/items/999
+HTTP/1.1 404 Not Found
+date: Sat, 12 Sep 2026 09:57:41 GMT
+server: uvicorn
+content-length: 27
+content-type: application/json
+
+{"detail":"Item not found"}

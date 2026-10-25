@@ -1,0 +1,156 @@
+// Mind Map функциональных требований GNOME Calculator 46.3
+// Сборка: dot -Tpng -Gdpi=150 mindmap.dot -o mindmap.png
+digraph MindMap {
+    graph [rankdir=LR, splines=true, nodesep=0.12, ranksep=0.7, fontname="DejaVu Sans", bgcolor="white",
+           label="Mind Map функциональных требований: GNOME Calculator 46.3 (Практика 1)", labelloc=t, fontsize=20];
+    node  [fontname="DejaVu Sans", shape=box, style="rounded,filled", fontsize=12, margin="0.15,0.06"];
+    edge  [color="#777777", arrowhead=none, penwidth=1.3];
+
+    // ---- Центр ----
+    root [label="Калькулятор GNOME\n(gnome-calculator 46.3)", shape=ellipse, style=filled,
+          fillcolor="#FF7800", fontcolor=white, fontsize=18, penwidth=2];
+
+    // ---- Уровень 1: группы функций ----
+    node [fontsize=14, fillcolor="#FFD9B3", penwidth=1.5];
+    modes  [label="Режимы работы"];
+    arith  [label="Базовая арифметика"];
+    adv    [label="Расширенные функции"];
+    prog   [label="Режим программирования"];
+    fin    [label="Финансовый режим"];
+    hist   [label="История и буфер обмена"];
+    conv   [label="Конвертация единиц"];
+    prefs  [label="Настройки"];
+    help   [label="Справка и навигация"];
+    root -> {prog fin hist conv prefs} [penwidth=2.2, color="#FF7800"];
+    {modes arith adv help} -> root [penwidth=2.2, color="#FF7800"];
+
+    // ---- Уровень 2/3: Режимы ----
+    node [fontsize=12, fillcolor="#FFF1E0", penwidth=1];
+    m_basic [label="Базовый (Ctrl+Alt+B)\nцифры, + − × ÷, %, mod, π, √, x²"];
+    m_adv   [label="Расширенный (Ctrl+Alt+A)\nтригонометрия, log/ln, x!, |x|,\nкомплексные числа, переменные"];
+    m_fin   [label="Финансовый (Ctrl+Alt+F)\nCtrm, Ddb, Fv, Gpm, Pmt, Pv,\nRate, Sln, Syd, Term"];
+    m_prog  [label="Программирование (Ctrl+Alt+P)\nсистемы счисления, биты,\nлогические операции"];
+    m_kbd   [label="Клавиатурный (Ctrl+Alt+K)\nбез экранных кнопок,\nтолько ввод с клавиатуры"];
+    m_menu  [label="Переключение через меню\n«Выбор режима» в заголовке"];
+    {m_menu m_basic m_adv m_fin m_prog m_kbd} -> modes;
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_mode1 [label="Тест: при смене режима\nменяется набор кнопок и\nсохраняется история"];
+    t_mode2 [label="Тест: окно автоматически\nменяет размер под режим"];
+    {t_mode1 t_mode2} -> m_menu;
+
+    // ---- Арифметика ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    a_add  [label="Сложение: 12+7 = 19"];
+    a_sub  [label="Вычитание: 100−42 = 58"];
+    a_mul  [label="Умножение: 6×7 = 42"];
+    a_div  [label="Деление: 81÷9 = 9"];
+    a_pct  [label="Проценты: 200×15% = 30"];
+    a_par  [label="Скобки: (2+3)×4 = 20"];
+    a_neg  [label="Отрицательные числа:\n−8+3 = −5"];
+    a_mod  [label="Остаток: 17 mod 5 = 2"];
+    a_dec  [label="Десятичная запятая:\n3,5×2 = 7"];
+    a_clr  [label="Очистка: C / Escape,\nBackspace — удаление символа"];
+    a_eq   [label="Равно: клавиша Enter / кнопка ="];
+    {a_add a_sub a_mul a_div a_pct a_par a_neg a_mod a_dec a_clr a_eq} -> arith;
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_div0 [label="Негативный тест: 5÷0 →\n«Деление на ноль не определено»"];
+    t_prio [label="Тест приоритета:\n2+3×4 = 14, (2+3)×4 = 20"];
+    t_bksp [label="Тест: 1234 + 2×Backspace → 12"];
+    t_div0 -> a_div;  t_prio -> a_par;  t_bksp -> a_clr;
+
+    // ---- Расширенные ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    e_pow  [label="Степень: 2^10 = 1024, x², xʸ"];
+    e_sqrt [label="Корень: sqrt(144) = 12"];
+    e_fact [label="Факториал: 5! = 120"];
+    e_trig [label="Тригонометрия: sin, cos, tan,\nsinh, cosh, tanh"];
+    e_log  [label="Логарифмы: log(1000) = 3,\nln(e) = 1"];
+    e_const[label="Константы: π, e\n2×π = 6,283185307"];
+    e_abs  [label="Модуль: |−7| = 7"];
+    e_var  [label="Переменные: x=5, x^2+1 = 26,\nсписок «x ▼», rand, _ (ответ)"];
+    e_cplx [label="Комплексные числа:\ni, Re, Im, conj, Arg"];
+    {e_pow e_sqrt e_fact e_trig e_log e_const e_abs e_var e_cplx} -> adv;
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_trig1 [label="Тест: sin(30) = 0,5 (градусы)"];
+    t_trig2 [label="Тест: sin(π÷2) = 1 (радианы)"];
+    t_fact  [label="Граничный тест: 0! = 1,\nфакториал дроби/отрицательного"];
+    t_var   [label="Тест: значение переменной\nсохраняется между режимами"];
+    {t_trig1 t_trig2} -> e_trig;  t_fact -> e_fact;  t_var -> e_var;
+
+    // ---- Программирование ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    p_base [label="Системы счисления:\nдвоичная / восьмеричная /\nдесятичная / шестнадцатеричная"];
+    p_bits [label="Побитовый редактор:\n64 бита, клик по биту\nизменяет число"];
+    p_ops  [label="Логические операции:\nAND, OR, XOR, NOT"];
+    p_shift[label="Сдвиги: << и >>"];
+    p_word [label="Размер слова:\n8 / 16 / 32 / 64 бита"];
+    p_misc [label="ones, twos, int, frac, log₂"];
+    prog -> {p_base p_bits p_ops p_shift p_word p_misc};
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_hex  [label="Тест: 255 → HEX FF,\nBIN 11111111, OCT 377"];
+    t_and  [label="Тест: 12 and 10 = 8,\n12 or 10 = 14, 12 xor 10 = 6"];
+    t_sh   [label="Тест: 1<<4 = 16"];
+    t_bit  [label="Тест: клик по биту 0\nпри 16 → 17"];
+    p_base -> t_hex;  p_ops -> t_and;  p_shift -> t_sh;  p_bits -> t_bit;
+
+    // ---- Финансы ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    f_pmt  [label="Pmt — периодическая оплата\n(капитал, ставка, срок)"];
+    f_fv   [label="Fv / Pv — будущая и\nтекущая стоимость"];
+    f_rate [label="Rate / Term — ставка и срок"];
+    f_dep  [label="Амортизация: Ddb, Sln, Syd"];
+    f_oth  [label="Ctrm, Gpm — срок удвоения,\nваловая маржа"];
+    fin -> {f_pmt f_fv f_rate f_dep f_oth};
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_pmt  [label="Тест: 100000, 0.01, 12 →\nPmt = 8884,878867834"];
+    t_pmt2 [label="Наблюдение: ставка вводится\nдолей (0.01), не процентом;\n«0,01» с запятой не принято"];
+    f_pmt -> {t_pmt t_pmt2};
+
+    // ---- История / буфер ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    h_tape [label="Лента истории:\nвыражение = результат"];
+    h_copy [label="Копирование результата\nCtrl+C / вставка Ctrl+V"];
+    h_clr  [label="Очистка истории\nCtrl+Escape"];
+    h_undo [label="Отменить / Возвратить\nCtrl+Z, Shift+Ctrl+Z"];
+    h_prev [label="Предыдущий / следующий\nрезультат: Alt+← / Alt+→"];
+    hist -> {h_tape h_copy h_clr h_undo h_prev};
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_copy [label="Тест: результат 18 → Ctrl+C,\n«1+» Ctrl+V → 1+18 = 19"];
+    t_hist [label="Тест: после Ctrl+Escape\nлента пуста"];
+    h_copy -> t_copy;  h_clr -> t_hist;
+
+    // ---- Конвертация ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    c_cat  [label="Категории: угол, длина, площадь,\nобъём, масса, скорость, время,\nчастота, температура, энергия,\nобъём данных, валюта…"];
+    c_pane [label="Панель «из → в» со\nвстроенным пересчётом\nвведённого числа"];
+    c_swap [label="Кнопка ⇄ — обмен единиц"];
+    conv -> {c_cat c_pane c_swap};
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_temp [label="Тест: 100 °C = 212 °F"];
+    t_ang  [label="Тест: 1 градус = 0,0175 радиан"];
+    c_pane -> {t_temp t_ang};
+
+    // ---- Настройки ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    s_fmt  [label="Формат чисел (главное меню):\nавтоматически / фиксированный /\nнаучный / инженерный"];
+    s_prec [label="Количество десятичных знаков\n(точность), по умолчанию 9"];
+    s_zero [label="Незначащие нули после запятой"];
+    s_thou [label="Разделители тысяч"];
+    s_ang  [label="Угловые единицы:\nградусы / радианы / грады"];
+    s_word [label="Размер слова (для режима\nпрограммирования)"];
+    s_cur  [label="Интервал обновления\nкурсов валют"];
+    prefs -> {s_fmt s_prec s_zero s_thou s_ang s_word s_cur};
+    node [fillcolor="#FFFFFF", fontsize=11, style="rounded,filled,dashed"];
+    t_sci  [label="Тест: 123456×1000 →\n1,23456×10⁸ (научный)"];
+    t_prec [label="Тест: 1÷3 = 0,333333333 (9)\nи 0,333 (3 знака)"];
+    t_thou [label="Тест: 1234567×10 = 12 345 670"];
+    s_fmt -> t_sci;  s_prec -> t_prec;  s_thou -> t_thou;
+
+    // ---- Справка ----
+    node [fillcolor="#FFF1E0", fontsize=12, style="rounded,filled"];
+    k_keys [label="Окно «Комбинации клавиш»\nCtrl+?"];
+    k_help [label="Справка F1"];
+    k_about[label="«О приложении» — версия 46.3"];
+    k_new  [label="Новое окно Ctrl+N,\nзакрытие Ctrl+W / Ctrl+Q"];
+    {k_keys k_help k_about k_new} -> help;
+}

@@ -1,0 +1,19 @@
+$ sqlite3 auction.db "select count(*) from items; select * from items;"
+count(*) = 16
+id|name|description|price
+1|Item 1|A description of Item 1|100.0
+2|Item 1|A description of Item 1|100.0
+3|Item 1|A description of Item 1|100.0
+4|Item 1|A description of Item 1|100.0
+5|Item 1|A description of Item 1|100.0
+6|Item 1|A description of Item 1|100.0
+7|Item 1|A description of Item 1|100.0
+8|Item 1|A description of Item 1|100.0
+9|Item 1|A description of Item 1|100.0
+10|Item 1|A description of Item 1|100.0
+11|Item 1|A description of Item 1|100.0
+12|Item 1|A description of Item 1|100.0
+13|Item 1|A description of Item 1|100.0
+14|Item 1|A description of Item 1|100.0
+15|Item 1|A description of Item 1|100.0
+16|Item 1|A description of Item 1|100.0

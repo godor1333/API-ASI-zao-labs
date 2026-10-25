@@ -1,0 +1,15 @@
+digraph G {
+  rankdir=LR; fontname="DejaVu Sans"; node [shape=circle, fontname="DejaVu Sans", fontsize=11, width=1.5, fixedsize=true]; edge [fontname="DejaVu Sans", fontsize=10];
+  S0 [label="Ожидание\n(баланс 0)", shape=doublecircle];
+  S1 [label="Приём\nмонет\n(баланс > 0)"];
+  S2 [label="Напиток\nвыдан"];
+  S3 [label="Отказ:\nNot enough\ncoins!"];
+  S0 -> S1 [label="Insert(1..500)\n/ показать сумму"];
+  S1 -> S1 [label="Insert(1..500)\n/ сумма += n"];
+  S1 -> S2 [label="Выбор напитка,\nбаланс ≥ цена\n/ сдача, Goodbye"];
+  S1 -> S3 [label="Выбор напитка,\nбаланс < цена\n/ сообщение"];
+  S3 -> S1 [label="Insert(n)\n/ сумма += n"];
+  S0 -> S3 [label="Выбор напитка\nпри балансе 0"];
+  S3 -> S0 [label="(баланс 0)", style=dashed];
+  S2 -> S0 [label="через 10 с\n/ обнуление\nинтерфейса"];
+}

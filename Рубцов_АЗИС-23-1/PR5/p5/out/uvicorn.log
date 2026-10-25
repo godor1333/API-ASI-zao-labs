@@ -1,0 +1,76 @@
+INFO:     Will watch for changes in these directories: ['/home/claude/work/p5']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [4916] using WatchFiles
+INFO:     Started server process [4919]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:38812 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38824 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38832 - "GET /items/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38836 - "GET /items/999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56030 - "GET /docs HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'out/swagger_shot.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4919]
+INFO:     Started server process [5218]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:34206 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34206 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51310 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37162 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37162 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48304 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48304 - "GET /openapi.json HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'out/swagger_shot.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5218]
+INFO:     Started server process [5810]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:43598 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43598 - "GET /openapi.json HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'out/swagger_shot.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5810]
+INFO:     Started server process [6021]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:42562 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42562 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42892 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42892 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42902 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42902 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42904 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42904 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42908 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42908 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42922 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42922 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32896 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32896 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32900 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32900 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32902 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32902 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37140 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37140 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37152 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37152 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48670 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48670 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42706 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42706 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42712 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42712 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42720 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42720 - "GET /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42724 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42724 - "GET /items/ HTTP/1.1" 200 OK

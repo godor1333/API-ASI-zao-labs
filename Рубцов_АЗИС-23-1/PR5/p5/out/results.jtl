@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1789208156844,54,Create Item,200,OK,Thread Group 1-1,text,true,,196,252,1,1,http://127.0.0.1:8000/items/,49,0,33
+1789208156902,2,Get Items,200,OK,Thread Group 1-1,text,true,,991,123,1,1,http://127.0.0.1:8000/items/,2,0,0
+1789208158704,7,Create Item,200,OK,Thread Group 1-2,text,true,,196,252,1,1,http://127.0.0.1:8000/items/,7,0,1
+1789208158711,4,Get Items,200,OK,Thread Group 1-2,text,true,,1063,123,1,1,http://127.0.0.1:8000/items/,4,0,0
+1789208160707,6,Create Item,200,OK,Thread Group 1-3,text,true,,196,252,1,1,http://127.0.0.1:8000/items/,5,0,1
+1789208160715,2,Get Items,200,OK,Thread Group 1-3,text,true,,1136,123,1,1,http://127.0.0.1:8000/items/,2,0,0
+1789208162709,5,Create Item,200,OK,Thread Group 1-4,text,true,,196,252,1,1,http://127.0.0.1:8000/items/,5,0,1
+1789208162715,2,Get Items,200,OK,Thread Group 1-4,text,true,,1208,123,1,1,http://127.0.0.1:8000/items/,2,0,0
+1789208164707,5,Create Item,200,OK,Thread Group 1-5,text,true,,196,252,1,1,http://127.0.0.1:8000/items/,5,0,1
+1789208164712,2,Get Items,200,OK,Thread Group 1-5,text,true,,1280,123,1,1,http://127.0.0.1:8000/items/,2,0,0

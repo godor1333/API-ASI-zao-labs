@@ -1,0 +1,36 @@
+$ RASP_URL=http://127.0.0.1:8765/raspisanie python3 -m pytest tests -v --tb=short --color=yes
+
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+rootdir: /home/claude/work/p4
+configfile: pytest.ini
+plugins: anyio-4.13.0
+[1mcollecting ... [0mcollected 25 items
+
+tests/test_schedule.py::test_page_title_and_week [32mPASSED[0m[32m                  [  4%][0m
+tests/test_schedule.py::test_group_present_in_list [32mPASSED[0m[32m                [  8%][0m
+tests/test_schedule.py::test_days_match [32mPASSED[0m[32m                           [ 12%][0m
+tests/test_schedule.py::test_lessons_count_per_day[Вторник] [32mPASSED[0m[32m       [ 16%][0m
+tests/test_schedule.py::test_lessons_count_per_day[Среда] [32mPASSED[0m[32m         [ 20%][0m
+tests/test_schedule.py::test_lessons_count_per_day[Четверг] [32mPASSED[0m[32m       [ 24%][0m
+tests/test_schedule.py::test_lessons_count_per_day[Пятница] [32mPASSED[0m[32m       [ 28%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Вторник-пара1] [32mPASSED[0m[32m [ 32%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Вторник-пара2] [32mPASSED[0m[32m [ 36%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Вторник-пара3] [32mPASSED[0m[32m [ 40%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Вторник-пара4] [32mPASSED[0m[32m [ 44%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Среда-пара1] [32mPASSED[0m[32m [ 48%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Среда-пара2] [32mPASSED[0m[32m [ 52%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Среда-пара3] [32mPASSED[0m[32m [ 56%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Среда-пара4] [32mPASSED[0m[32m [ 60%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Четверг-пара1] [32mPASSED[0m[32m [ 64%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Четверг-пара2] [32mPASSED[0m[32m [ 68%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Четверг-пара3] [32mPASSED[0m[32m [ 72%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Четверг-пара4] [32mPASSED[0m[32m [ 76%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Пятница-пара1] [32mPASSED[0m[32m [ 80%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Пятница-пара2] [32mPASSED[0m[32m [ 84%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Пятница-пара3] [32mPASSED[0m[32m [ 88%][0m
+tests/test_schedule.py::test_lesson_matches_expected[Пятница-пара4] [32mPASSED[0m[32m [ 92%][0m
+tests/test_schedule.py::test_testing_course_on_friday [32mPASSED[0m[32m             [ 96%][0m
+tests/test_schedule.py::test_no_lessons_on_monday_and_saturday [32mPASSED[0m[32m    [100%][0m
+
+[32m============================== [32m[1m25 passed[0m[32m in 3.46s[0m[32m ==============================[0m

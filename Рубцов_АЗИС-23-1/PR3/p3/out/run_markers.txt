@@ -1,0 +1,15 @@
+[1m============================================ test session starts =============================================[0m
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/work/p3
+configfile: pytest.ini
+plugins: anyio-4.13.0
+[1mcollecting ... [0mcollected 21 items / 16 deselected / 5 selected
+
+test_auth_manager.py::test_register_and_get_user_by_id [32mPASSED[0m[32m                                          [ 20%][0m
+test_auth_manager.py::test_authenticate_user_success_and_wrong_password [32mPASSED[0m[32m                         [ 40%][0m
+test_auth_manager.py::test_delete_user [32mPASSED[0m[32m                                                          [ 60%][0m
+test_auth_manager.py::test_transfer_balance_insufficient_funds [32mPASSED[0m[32m                                  [ 80%][0m
+test_auth_manager.py::test_register_duplicate_username [32mPASSED[0m[32m                                          [100%][0m
+
+[32m====================================== [32m[1m5 passed[0m, [33m16 deselected[0m[32m in 0.02s[0m[32m ======================================[0m

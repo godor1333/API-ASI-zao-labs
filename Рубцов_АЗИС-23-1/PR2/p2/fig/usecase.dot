@@ -1,0 +1,18 @@
+digraph UC {
+  fontname="DejaVu Sans"; node [fontname="DejaVu Sans", fontsize=11]; edge [fontname="DejaVu Sans", fontsize=10];
+  rankdir=LR;
+  actor [shape=none, label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD><FONT POINT-SIZE="40">&#9786;</FONT></TD></TR><TR><TD>Покупатель</TD></TR></TABLE>>];
+  buy [shape=ellipse, label="Купить кофе"];
+  insert [shape=ellipse, label="Внести деньги\n(1..500 руб.)"];
+  select [shape=ellipse, label="Выбрать напиток"];
+  change [shape=ellipse, label="Получить сдачу"];
+  reset [shape=ellipse, label="Обнуление интерфейса\nчерез 10 с"];
+  refuse [shape=ellipse, label="Сообщение о нехватке\nсредств"];
+  actor -> buy;
+  buy -> insert [label="«include»", style=dashed, dir=forward];
+  buy -> select [label="«include»", style=dashed];
+  buy -> change [label="«include»", style=dashed];
+  reset -> buy [label="«extend»", style=dashed];
+  refuse -> buy [label="«extend»\n(баланс < цены)", style=dashed];
+  timer [shape=none, label="Таймер\n10 с"]; timer -> reset [style=dotted];
+}

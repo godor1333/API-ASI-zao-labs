@@ -1,0 +1,23 @@
+test_auth_manager.py::test_register_and_get_user_by_id
+test_auth_manager.py::test_authenticate_user_success_and_wrong_password
+test_auth_manager.py::test_delete_user
+test_auth_manager.py::test_count_users_by_country[CountryA-2]
+test_auth_manager.py::test_count_users_by_country[CountryB-1]
+test_auth_manager.py::test_count_users_by_country[CountryC-0]
+test_auth_manager.py::test_authenticate_user_parametrized[dave-pass-True]
+test_auth_manager.py::test_authenticate_user_parametrized[dave-wrong-False]
+test_auth_manager.py::test_authenticate_user_parametrized[nobody-pass-False]
+test_auth_manager.py::test_authenticate_user_parametrized[DAVE-pass-False]
+test_auth_manager.py::test_transfer_balance_parametrized[200-800-700]
+test_auth_manager.py::test_transfer_balance_parametrized[0-1000-500]
+test_auth_manager.py::test_transfer_balance_parametrized[1000-0-1500]
+test_auth_manager.py::test_transfer_balance_parametrized[0.5-999.5-500.5]
+test_auth_manager.py::test_transfer_balance_insufficient_funds
+test_auth_manager.py::test_register_duplicate_username
+test_auth_manager.py::test_sql_injection_authenticate_user
+test_auth_manager.py::test_sql_injection_register_user_drop_table
+test_auth_manager.py::test_register_many_users
+test_auth_manager.py::test_user_row_to_dict
+test_auth_manager_failing.py::test_transfer_balance_wrong_expectation
+
+[32m[32m21 tests collected[0m[32m in 0.01s[0m[0m
