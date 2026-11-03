@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1793713901562,98,Create Item (POST /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-1",text,true,,203,292,1,1,http://127.0.0.1:8000/items/,89,0,41
+1793713901665,7,Get Items (GET /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-1",text,true,,205,183,1,1,http://127.0.0.1:8000/items/,7,0,0
+1793713903409,10,Create Item (POST /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-2",text,true,,203,292,1,1,http://127.0.0.1:8000/items/,10,0,1
+1793713903420,7,Get Items (GET /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-2",text,true,,285,183,1,1,http://127.0.0.1:8000/items/,7,0,0
+1793713905402,9,Create Item (POST /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-3",text,true,,203,292,1,1,http://127.0.0.1:8000/items/,9,0,1
+1793713905412,6,Get Items (GET /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-3",text,true,,364,183,1,1,http://127.0.0.1:8000/items/,6,0,0
+1793713907404,33,Create Item (POST /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-4",text,true,,203,292,1,1,http://127.0.0.1:8000/items/,33,0,1
+1793713907438,7,Get Items (GET /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-4",text,true,,443,183,1,1,http://127.0.0.1:8000/items/,7,0,0
+1793713909404,9,Create Item (POST /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-5",text,true,,203,292,1,1,http://127.0.0.1:8000/items/,9,0,1
+1793713909414,7,Get Items (GET /items/),200,OK,"Users: 5, Ramp-up: 10, Loop: 1 1-5",text,true,,522,183,1,1,http://127.0.0.1:8000/items/,7,0,0
