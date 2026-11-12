@@ -1,0 +1,7 @@
+[pytest]
+markers = [
+    "basic: basic tests", 
+    "parameterized: parameterized tests",
+    "exception: tests for exceptions",
+    "sql_injection: tests with sql injections"
+]
